@@ -1,0 +1,2 @@
+//639083432370231264
+{"Identifier":"BTRT","Dependencies":"","UK English":{"About":{"Name":"BTR"},"Actions":[{"Parameters":[["Text"]]},{"Parameters":[["Text"]]}],"Conditions":[{"Triggered":false,"Parameters":[["Text"]]},{"Triggered":false,"Parameters":[["Text"]]}],"Expressions":[{"Returns":"Text","Parameters":[["Text"]]},{"Returns":"Integer","Parameters":[["Integer"]]}]}}

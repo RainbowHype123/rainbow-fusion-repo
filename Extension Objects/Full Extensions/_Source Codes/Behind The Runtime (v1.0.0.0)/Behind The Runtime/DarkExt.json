@@ -1,0 +1,117 @@
+﻿{
+	"Identifier": "BTRT",
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "BTR",
+			"Author": "RainbowHype",
+			"Comment": "Full name: 'Behind The Runtime'. | A simple open-sourced commentor extension. [v1.0.0.0]",
+			"Copyright": "Copyright \u00A9 2026 by RainbowHype",
+			"Help": "Help/Behind The Runtime Ext.chm",
+			"URL": "https://github.com/RainbowHype123/rainbow-fusion-repo"
+		},
+		"ActionMenu": [
+			"---",
+			[ 0, "Comment (Action)" ],
+			[ 1, "Comment (Action w. Icon)" ],
+			"---"
+		],
+		"ConditionMenu": [
+			"---",
+			[ 0, "Comment (Condition)" ],
+			[ 1, "Comment (Condition w. Icon)" ],
+			"---"
+		],
+		"ExpressionMenu": [
+			"---",
+			[ 0, "Comment (Expression - String)" ],
+			[ 1, "Comment (Expression - Integer)" ],
+			"---"
+		],
+		"Actions": [
+			{
+				"Title": "%0",
+				"Parameters": [
+					[ "Text", "Write your comment here." ]
+				]
+			},
+			{
+				"Title": "%o : %0",
+				"Parameters": [
+					[ "Text", "Write your comment here." ]
+				]
+			}
+		],
+		"Conditions": [
+			{
+				"Title": "%0",
+				"Triggered": false,
+				"Parameters": [
+					[ "Text", "Write your comment here." ]
+				]
+			},
+			{
+				"Title": "%o : %0",
+				"Triggered": false,
+				"Parameters": [
+					[ "Text", "Write your comment here." ]
+				]
+			}
+		],
+		"Expressions": [
+			{
+				"Title": "S(", // Apparently you don't actually need an $ in string expressions.
+				"Returns": "Text",
+				"Parameters": [
+					[ "Text", "My Comment (Str)" ]
+				]
+			},
+			{
+				"Title": "I(", 
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "My Comment (Int)" ]
+				]
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Version",
+				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
+				"Type": "Text",
+				"DefaultState": "v1.0.0.0",
+				"Bold": true
+			}
+			/*
+			{
+				"Title": "Version and Update Info",
+				"Info": "Provides the current extension version and offers you to directly check for an update",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Version",
+				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
+				"Type": "Text",
+				"DefaultState": "v1.0.0.0",
+				"Bold": true
+			},
+			{
+				"Title": "Check for Updates",
+				"Info": "Press this button to trigger a check for an update.",
+				"Type": "Edit button",
+				"DefaultState": "Run Check"
+			},
+			{
+				"Title": "Auto-check for Updates",
+				"Info": "(Recommended) Toggles whether or not the extension will automatically check for an update. Disable it if you often use Fusion without an internet connection.",
+				"Type": "Checkbox",
+				"DefaultState": true,
+				"Bold": true
+			},
+			{
+				"Type": "FolderEnd"
+			}
+			*/
+		]
+	}
+}
