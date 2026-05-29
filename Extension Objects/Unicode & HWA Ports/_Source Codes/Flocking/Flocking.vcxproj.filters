@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{971da576-8e98-43af-a5e6-c9f70bb4b49b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0fd1e938-d007-4b0a-9395-f5f1c1ef99d6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{761c9f05-b0aa-4f92-a156-4ff99ced7a73}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="MMF Headers">
+      <UniqueIdentifier>{8549ece8-8e58-4081-a918-2f2aaab28bda}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Edittime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HelperFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectSelection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ext.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ext.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSelection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Program Files\Microsoft Visual Studio\Vc98\Include\Basetsd.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Ccx.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Ccxhdr.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\CfcError.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\CfcFile.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Cncf.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\cncr.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Cncy.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Cnpdll.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\colors.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\EVTCCX.H">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Fill.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\FilterMgr.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\ImageFlt.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\ImgFlt.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Palet.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\PictEdDefs.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Props.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\PTYPE.H">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\SoundFilter.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\SoundFilterMgr.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\Surface.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\TigsExt.hpp">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Inc\WinMacro.h">
+      <Filter>MMF Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="EXTICON.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
