@@ -1,0 +1,9 @@
+# The usuals
+*.jks
+*.keystore
+*.DS_Store
+/__MACOSX
+*.001
+*.mf2backup.mfa
+*.mfacfg
+*.lnk

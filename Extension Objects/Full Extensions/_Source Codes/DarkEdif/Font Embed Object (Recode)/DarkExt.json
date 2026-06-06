@@ -1,0 +1,210 @@
+﻿{
+	// I like the idea of using FONT as the identifier, but since the original obj didn't do that, I won't do it either
+	"Identifier": "FTBD", // Or possibly DBTF?
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "Font Embed Object",
+			"Author": "Chris 'Dines' Denyer",
+			"Comment": "Registers a font for use without installing it and without allowing other programs to use it. [June 2026 update.]",
+			"Copyright": "Copyright \u00A9 2010-2026 Chris Denyer", // DE recreation by RainbowHype
+			"Help": "Help/FontEmbed/index.html",
+			"URL": "" // The original ext had no URL
+		},
+		"ActionMenu": [
+			[ 0, "Embed a Font" ],
+			[ 1, "Remove a Font" ],
+			"---"
+		],
+		"ConditionMenu": [
+			/*
+			[ 0, "On Font Embedded" ],
+			[ 1, "On Font Removed" ],
+			"---"
+			*/
+		],
+		"ExpressionMenu": [
+			[ 0, "Number of fonts added" ], // In the original ext, this number doesn't decrease when removing a font
+			"---"
+		],
+		"Actions": [
+			{
+				"Title": "Embed Font(s): %0",
+				"Parameters": [
+					[ "Text", "Path of the font (separate multiple font paths with a | character)" ]
+				]
+			},
+			{
+				"Title": "Remove Font(s): %0",
+				"Parameters": [
+					[ "Text", "Path of the font (separate multiple font paths with a | character)" ]
+				]
+			}
+		],
+		"Conditions": [
+			/*
+			{
+				"Title": "%o : On Font(s) Embedded: %0",
+				"Triggered": true,
+				"Parameters": [
+					[ "Text", "Embedded Font" ]
+				]
+			},
+			{
+				"Title": "%o : On Font(s) Removed: %0",
+				"Triggered": true,
+				"Parameters": [
+					[ "Text", "Removed Font" ]
+				]
+			}
+			*/
+		],
+		"Expressions": [
+			{
+				"Title": "FontsAdded(",
+				"Returns": "Integer"
+			}
+		],
+		"Properties": [
+			/*
+			{
+				"Title": "Compatibility Mode",
+				"Info": "In old versions of the object, it would not subtract from the 'number of fonts added' expression when removing a font. It would also embed fonts in Direct3D 11 despite the runtime doing it automatically in that display mode. Select this option to keep this behavior.",
+				"Type": "Checkbox",
+				"Bold": true,
+				"DefaultState": false
+			}
+			*/
+		]
+	}/*,
+	"French": {
+		"About": {
+			"Name": "Font Embed Object", // Not in French cause idk what it would be in French
+			"Author": "Chris 'Dines' Denyer",
+			"Copyright": "Copyright \u00A9 2010-2026 Chris Denyer",
+			"Comment": "Une ou deux phrases pour décrire votre poste", // Template comment
+			"Help": "Help/FontEmbed/index.html",
+			"URL": ""
+		}, // Everything past here, I have not modified from the template file
+		"ActionMenu": [
+			[ 0, "Exemple d'action" ],
+			"---",
+			[ "Sub Menu",
+				[ 1, "Exemple deuxième action" ]
+			]
+		],
+		"ConditionMenu": [
+			[ 0, "Sont deux nombres égaux?" ]
+		],
+		"ExpressionMenu": [
+			[ 0, "Ajouter deux nombres" ],
+			[ 1, "Bonjour monde" ]
+		],
+		"Actions": [
+			{
+				"Title": "Exemple d'action avec le paramètre %0",
+				"Parameters": [
+					[ "Integer", "Paramètre exemple" ]
+				]
+			},
+			{
+				"Title": "Exemple deuxième action"
+			}
+		],
+		"Conditions": [
+			{
+				"Title": "%o : Sont de %0 et %1 égale?",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Premier numéro" ],
+					[ "Integer", "Deuxième numéro" ]
+				]
+			}
+		],
+		"Expressions": [
+			{
+				"Title": "Adherer(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Premier numéro" ],
+					[ "Integer", "Deuxième numéro" ]
+				]
+			},
+			{
+				"Title": "BonjourMonde$(",
+				"Returns": "Text"
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Folder",
+				"Info": "Folder d'information",
+				"Type": "Folder"
+			},
+				{
+					"Title": "Case à cocher dans le dossier",
+					"Info": "oui, il faut faire preuve d'audace.",
+					"Type": "Checkbox",
+					"Bold": true,
+					"DefaultState": true
+				},
+			{
+				"Type": "FolderEnd"
+			},
+			{
+				"Title": "Texte statique 1",
+				"Info": "Texte vide",
+				"Type": "Text"
+			},
+			{
+				"Title": "Texte statique 2",
+				"Info": "Texte vide, en caractères gras",
+				"Type": "Text",
+				"Bold": true
+			},
+			{
+				"Title": "Éditable 3",
+				"Info": "Ouais, il ne devrait pas faire preuve d'audace.",
+				"Type": "Edit button",
+				"DefaultState": "Bouton"
+			},
+			{
+				"Title": "Éditable 4",
+				"Info": "Ouais, il est très gras.",
+				"Type": "Edit button",
+				"DefaultState": "Bouton texte",
+				"Bold": true
+			},
+			{
+				"Title": "Éditable 5",
+				"Info": "Régulière chaîne de boîte d'édition.",
+				"Type": "Editbox String"
+			},
+			{
+				"Title": "Éditable 6",
+				"Info": "Celui-ci devrait obliger les majuscules.",
+				"Type": "Editbox String",
+				"Case": "Upper"
+			},
+			{
+				"Title": "Éditable 7",
+				"Info": "Celui-ci devrait être limité à 25 caractères.",
+				"Type": "Editbox String",
+				"Case": "Lower",
+				"MaxLength": 25
+			},
+			{
+				"Title": "Éditable 8",
+				"Info": "Celui-ci devrait être limité entre 20 et 25.",
+				"Type": "Editbox Number",
+				"Maximum": 25,
+				"Minimum": 20
+			}
+		]
+	}*/
+	/*
+	"German":
+	{},
+	"Japanese":
+	{}*/
+}
