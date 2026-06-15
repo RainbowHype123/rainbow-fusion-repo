@@ -20,3 +20,4 @@ output-metadata.json
 
 # Folder of unreleased stuff
 /_IGNORE
+*_IGNORE.zip
