@@ -17,3 +17,6 @@
 *.aab
 *.apk
 output-metadata.json
+
+# Folder of unreleased stuff
+/_IGNORE
