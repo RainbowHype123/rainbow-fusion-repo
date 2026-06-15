@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.37131.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeStamp", "TimeStamp.vcxproj", "{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode|x86 = Debug Unicode|x86
+		Debug|x86 = Debug|x86
+		Release Unicode|x86 = Release Unicode|x86
+		Release_Small Unicode|x86 = Release_Small Unicode|x86
+		Release_Small|x86 = Release_Small|x86
+		Release|x86 = Release|x86
+		Run_Only Unicode|x86 = Run_Only Unicode|x86
+		Run_Only_Small Unicode|x86 = Run_Only_Small Unicode|x86
+		Run_Only_Small|x86 = Run_Only_Small|x86
+		Run_Only|x86 = Run_Only|x86
+		Vitalize_Small|x86 = Vitalize_Small|x86
+		Vitalize|x86 = Vitalize|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Debug Unicode|x86.ActiveCfg = Debug Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Debug Unicode|x86.Build.0 = Debug Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Debug|x86.ActiveCfg = Debug|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Debug|x86.Build.0 = Debug|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release Unicode|x86.ActiveCfg = Release Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release Unicode|x86.Build.0 = Release Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release_Small Unicode|x86.ActiveCfg = Release_Small Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release_Small Unicode|x86.Build.0 = Release_Small Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release_Small|x86.ActiveCfg = Release_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release_Small|x86.Build.0 = Release_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release|x86.ActiveCfg = Release|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Release|x86.Build.0 = Release|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only Unicode|x86.ActiveCfg = Run_Only Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only Unicode|x86.Build.0 = Run_Only Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only_Small Unicode|x86.ActiveCfg = Run_Only_Small Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only_Small Unicode|x86.Build.0 = Run_Only_Small Unicode|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only_Small|x86.ActiveCfg = Run_Only_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only_Small|x86.Build.0 = Run_Only_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only|x86.ActiveCfg = Run_Only|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Run_Only|x86.Build.0 = Run_Only|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Vitalize_Small|x86.ActiveCfg = Vitalize_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Vitalize_Small|x86.Build.0 = Vitalize_Small|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Vitalize|x86.ActiveCfg = Vitalize|Win32
+		{A39A6B11-5CA2-4B9A-9D12-181B301ABA56}.Vitalize|x86.Build.0 = Vitalize|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C6075BF-C556-4823-B806-6D31FFC24672}
+	EndGlobalSection
+EndGlobal
