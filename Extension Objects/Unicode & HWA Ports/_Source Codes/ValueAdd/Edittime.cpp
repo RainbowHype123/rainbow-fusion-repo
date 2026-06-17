@@ -829,16 +829,20 @@ void menucpy(HMENU hTargetMenu, HMENU hSourceMenu)
 // 
 HMENU GetPopupMenu(short mn)
 {
-	HMENU hPopup=CreatePopupMenu();
 #ifndef RUN_ONLY
+	HMENU hPopup=CreatePopupMenu();
+
 	if(mn == MN_CONDITIONS)
 		menucpy(hPopup,ConditionMenu());
 	else if(mn == MN_ACTIONS)
 		menucpy(hPopup,ActionMenu());
 	else if(mn == MN_EXPRESSIONS)
 		menucpy(hPopup,ExpressionMenu());
-#endif
+
 	return hPopup;
+#else
+	return NULL; // If RUN_ONLY
+#endif
 	/*
 	HMENU	hMn, hSubMenu, hPopup = NULL;
 
