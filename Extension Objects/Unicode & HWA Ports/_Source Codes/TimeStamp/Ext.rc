@@ -278,7 +278,7 @@ STRINGTABLE
 BEGIN
     IDST_OBJNAME            "TimeStamp object"
     IDST_AUTHOR             "Gareth Ben Martin of Dynamic Arcade"
-    IDST_COPYRIGHT          "� 2006-2026 Dynamic Arcade"
+    IDST_COPYRIGHT          "\xA9 2006-2026 Dynamic Arcade"
     IDST_COMMENT            "Manipulates timestamps."
     IDST_HTTP               "http://www.dynamicarcade.co.uk/"
 END

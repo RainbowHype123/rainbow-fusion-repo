@@ -71,8 +71,8 @@ typedef EDITDATAW *			LPEDATAW;
 #else
 #define EDITDATA	EDITDATAA
 #define LPEDATA		LPEDATAA
-
 #endif
+
 // Object versions
 #define	KCX_CURRENT_VERSION			1
 

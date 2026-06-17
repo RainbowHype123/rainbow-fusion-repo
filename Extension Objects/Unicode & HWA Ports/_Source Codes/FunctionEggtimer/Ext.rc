@@ -223,7 +223,7 @@ BEGIN
     IDST_OBJNAME            "Function Eggtimer"
     #endif
     IDST_AUTHOR             "Anders Riggelsen"
-    IDST_COPYRIGHT          " © 2010-2026 Anders Riggelsen"
+    IDST_COPYRIGHT          "\xA9 2010-2026 Anders Riggelsen"
     #if defined(_DEBUG)
     IDST_COMMENT            "[TEST BUILD] Function Eggtimer makes timed events much easier to create and control. For example, you can call a function that will first be triggered after a user-defined delay (like Javascript timers). Also features repeating functions and ever-repeating functions. (Unicode port by RainbowHype.)"
     #else

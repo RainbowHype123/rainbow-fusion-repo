@@ -949,7 +949,7 @@ void WINAPI DLLExport SetTextAlignment(mv _far *mV, LPEDATA edPtr, DWORD dwAlign
 // -----------------
 // Internal routine used later, copy one menu onto another
 // 
-#ifndef RUN_ONLY
+
 void menucpy(HMENU hTargetMenu, HMENU hSourceMenu)
 {
 #ifndef RUN_ONLY
@@ -1010,12 +1010,12 @@ HMENU GetPopupMenu(short mn)
 static LPEVENTINFOS2 GetEventInformations(LPEVENTINFOS2 eiPtr, short code)
 
 {
-	while(eiPtr->infos.code != code)
+	while (eiPtr->infos.code != code)
 		eiPtr = EVINFO2_NEXT(eiPtr);
 	
 	return eiPtr;
 }
-#endif // !defined(RUN_ONLY)
+//#endif // !defined(RUN_ONLY)
 
 
 // ----------------------------------------------------

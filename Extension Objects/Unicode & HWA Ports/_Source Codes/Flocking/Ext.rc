@@ -314,7 +314,7 @@ STRINGTABLE
 BEGIN
     IDST_OBJNAME            "Flocking"
     IDST_AUTHOR             "Anders Riggelsen"
-    IDST_COPYRIGHT          "Copyright � 2011-2026 Anders Riggelsen"
+    IDST_COPYRIGHT          "Copyright \xA9 2011-2026 Anders Riggelsen"
     #if defined(_DEBUG)
     IDST_COMMENT            "[UNICODE TEST] Add objects to a flock of automatically moving objects that ""flock"" together. (Unicode port by RainbowHype)"
     #else
