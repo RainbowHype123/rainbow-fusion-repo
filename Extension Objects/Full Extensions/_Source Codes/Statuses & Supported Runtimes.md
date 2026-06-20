@@ -74,6 +74,30 @@ A recode of the classic Font Embed object, originally done due to Clickteam havi
 - N/A
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POW 2o3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A recode of the classic Font Embed object, originally done due to Clickteam having lost (or forgotten to archive) the source code.
+
+--- SUPPORTED RUNTIMES ---
+
+- Windows (Unicode only)
+
+--- UNFINISHED RUNTIME PORTS ---
+
+- N/A
+
+--- PLANNED RUNTIME PORTS ---
+
+- Android
+- iOS
+- MacOS
+- Haxe (Mainly Linux, possibly WebGL)
+
+-- CANCELLED RUNTIME PORTS --- 
+
+- N/A
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iOS Haptic Feedback ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A small extension meant for allowing support of basic haptic feedback in Clickteam's iOS runtime. Requires iOS +11.0.

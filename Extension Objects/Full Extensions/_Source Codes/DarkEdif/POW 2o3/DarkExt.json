@@ -1,0 +1,84 @@
+﻿{
+	"Identifier": "P2O3",
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "POW 2o3",
+			"Author": "RainbowHype",
+			"Comment": "Offers expressions for squaring and cubing an expression, as well as a general 'Pow' function. Made for (and icons by) Flairex.",
+			"Copyright": "\u00A9 2026 RainbowHype",
+			"Help": "Help/POW2O3.chm",
+			"URL": "https://github.com/RainbowHype123/rainbow-fusion-repo"
+		},
+		"ActionMenu": [
+			//[ 0, "Action Example" ],
+			//"---"
+		],
+		"ConditionMenu": [
+			//[ 0, "Are two numbers equal?" ],
+			//"---"
+		],
+		"ExpressionMenu": [
+			[ 0, "Square a parameter" ],
+			[ 1, "Cube a parameter" ],
+			"---",
+			[ 2, "Power Function" ],
+			"---"
+		],
+		"Actions": [
+			/*
+			{
+				"Title": "Second Action Example"
+			}
+			*/
+		],
+		"Conditions": [
+			/*
+			{
+				"Title": "%o : Are %0 and %1 equal?",
+				"Triggered": false
+			}
+			*/
+		],
+		"Expressions": [
+			{
+				"Title": "Squared(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Int to be squared" ]
+				]
+			},
+			{
+				"Title": "Cubed(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Int to be cubed" ]
+				]
+			},
+			{
+				"Title": "Power(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Main Input" ],
+					[ "Integer", "Exponent" ]
+				]
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Version",
+				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
+				"Type": "Text",
+				"DefaultState": "v1.0.1.0",
+				"Bold": true
+			},
+			{
+				"Title": "Availabilty",
+				"Info": "Private = Do not distribute without permission! Otherwise, you're fine to do so. (Same rules apply to the source code!)",
+				"Type": "Text",
+				"DefaultState": "Public",
+				"Bold": true
+			}
+		]
+	}
+}
