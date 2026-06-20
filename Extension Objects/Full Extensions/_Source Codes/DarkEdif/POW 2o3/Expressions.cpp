@@ -2,24 +2,17 @@
 
 #include <cmath>
 
-int Extension::SquareParam(int IntegerInput)
+float Extension::SquareParam(float IntegerInput)
 {
 	return IntegerInput * IntegerInput;
 }
 
-int Extension::CubeParam(int IntegerInput)
+float Extension::CubeParam(float IntegerInput)
 {
 	return IntegerInput * IntegerInput * IntegerInput;
 }
 
-int Extension::PowFunc(int MainInput, int PowerInput)
+float Extension::PowFunc(float BaseInput, float ExponentInput)
 {
-	int result = 1;
-
-    for (int i = 0; i < PowerInput; i++)
-	{
-        result *= MainInput;
-	}
-
-    return result;
+    return exp(ExponentInput * log(BaseInput));
 }

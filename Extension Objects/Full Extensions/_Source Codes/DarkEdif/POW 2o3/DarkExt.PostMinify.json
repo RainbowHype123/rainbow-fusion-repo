@@ -1,2 +1,2 @@
-//639175335552370821
-{"Identifier":"P2O3","Dependencies":"","UK English":{"About":{"Name":"POW 2o3"},"Actions":[],"Conditions":[],"Expressions":[{"Returns":"Integer","Parameters":[["Integer"]]},{"Returns":"Integer","Parameters":[["Integer"]]},{"Returns":"Integer","Parameters":[["Integer"],["Integer"]]}]}}
+//639175849541130532
+{"Identifier":"P2O3","Dependencies":"","UK English":{"About":{"Name":"POW 2o3"},"Actions":[],"Conditions":[],"Expressions":[{"Returns":"Float","Parameters":[["Float"]]},{"Returns":"Float","Parameters":[["Float"]]},{"Returns":"Float","Parameters":[["Float"],["Float"]]}]}}

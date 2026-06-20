@@ -41,26 +41,26 @@
 			*/
 		],
 		"Expressions": [
-			{
-				"Title": "Squared(",
-				"Returns": "Integer",
-				"Parameters": [
-					[ "Integer", "Int to be squared" ]
-				]
-			},
-			{
-				"Title": "Cubed(",
-				"Returns": "Integer",
-				"Parameters": [
-					[ "Integer", "Int to be cubed" ]
-				]
-			},
+      {
+        "Title": "Squared(",
+        "Returns": "Float",
+        "Parameters": [
+          [ "Float", "Int to be squared" ]
+        ]
+      },
+      {
+        "Title": "Cubed(",
+        "Returns": "Float",
+        "Parameters": [
+          [ "Float", "Int to be cubed" ]
+        ]
+      },
 			{
 				"Title": "Power(",
-				"Returns": "Integer",
+				"Returns": "Float",
 				"Parameters": [
-					[ "Integer", "Main Input" ],
-					[ "Integer", "Exponent" ]
+					[ "Float", "Main Input" ],
+					[ "Float", "Exponent" ]
 				]
 			}
 		],
@@ -69,7 +69,7 @@
 				"Title": "Version",
 				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
 				"Type": "Text",
-				"DefaultState": "v1.0.1.0",
+				"DefaultState": "v1.0.2.0",
 				"Bold": true
 			},
 			{

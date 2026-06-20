@@ -79,9 +79,9 @@ public:
 
 	// Expressions
 
-	int SquareParam(int IntegerInput);
-	int CubeParam(int IntegerInput);
-	int PowFunc(int MainInput, int PowerInput);
+	float SquareParam(float IntegerInput);
+	float CubeParam(float IntegerInput);
+	float PowFunc(float MainInput, float PowerInput);
 
 	// Runs every tick of Fusion's runtime, can be toggled off and back on
 	REFLAG Handle();
