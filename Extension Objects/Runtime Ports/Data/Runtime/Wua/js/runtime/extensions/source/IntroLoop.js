@@ -1,3 +1,5 @@
+// Unofficial UWP port by RainbowHype
+
 CRunIntroLoop.G_QUE = []; // push , shift
 function CRunIntroLoop(){
 	this.mode_flg = 0;

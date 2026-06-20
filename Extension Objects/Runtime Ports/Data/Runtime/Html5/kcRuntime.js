@@ -20,9 +20,7 @@ CRunkcRuntime.EXP_GETRTNAME = 0;
 
 function CRunkcRuntime()
 {
-	this.parameters = null;
-	this.ret = 0;
-	this.bError = false;
+	
 }
 
 CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
@@ -34,8 +32,17 @@ CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
 
 	createRunObject: function (file, cob, version)
 	{
-		this.parameters = new Array();
 		return true;
+	},
+
+	handleRunObject: function ()
+	{
+		return 0;
+	},
+
+	destroyRunObject: function (bFast)
+	{
+		
 	},
 
 	condition: function (num, cnd)
@@ -64,19 +71,6 @@ CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
 				return false;
 		}
 		return false;
-	},
-
-	action:           function (num, act)
-	{
-		switch (num)
-		{
-
-		}
-	},
-
-	actResetParams:     function ()
-	{
-		this.parameters = null;
 	},
 
 	expression:         function (num)

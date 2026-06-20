@@ -1,7 +1,7 @@
 // Unofficial UWP port by RainbowHype
 
 CRunEventListener.CND_ONEVENT = 0;
-CRunEventListener.CND_LAST = 1;
+//CRunEventListener.CND_LAST = 1;
 
 CRunEventListener.ACT_ADDLISTFOR = 0;
 
@@ -15,7 +15,7 @@ function CRunEventListener()
 CRunEventListener.prototype = 
 {
     getNumberOfConditions: function() {
-        return CRunEventListener.CND_LAST;
+        return 1;
     },
     createRunObject: function(file, cob, version) {
         return true;

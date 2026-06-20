@@ -6,22 +6,19 @@
 //
 //----------------------------------------------------------------------------------
 
-CRunSimpleMsgBox.CND_LAST = 0;
+//CRunSimpleMsgBox.CND_LAST = 0;
 
 CRunSimpleMsgBox.ACT_SHOWMSGBOX = 0;
 
 function CRunSimpleMsgBox() {
     CRunExtension.call(this);
-	this.parameters = null;
-	this.ret = 0;
-	this.bError = false;
 }
 
 CRunSimpleMsgBox.prototype = 
 {
     getNumberOfConditions: function () 
 	{
-        return CRunSimpleMsgBox.CND_LAST;
+        return 0;
     },
 
     createRunObject: function (file, cob, version) 

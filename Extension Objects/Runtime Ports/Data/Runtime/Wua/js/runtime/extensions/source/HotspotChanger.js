@@ -1,4 +1,4 @@
-// UWP port by RainbowHype
+// Unofficial UWP port by RainbowHype
 
 function CRunHotspotChanger()
 {
