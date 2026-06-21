@@ -153,9 +153,9 @@ END
 // which is created by DarkEdifPreBuildTool minifying DarkExt.json.
 
 #if EditorBuild
-IDR_EDIF_ICON	Edif	"Icons\Frame Icon.png" // Frame Viewer
+IDR_EDIF_ICON	Edif	"Icons\\Frame Icon.png" // Frame Viewer
 //#ifdef SEPARATE_ICONS
-IDR_EDIF_IMAGE	Edif	"Icons\Menus Icon.png" // Object menus
+IDR_EDIF_IMAGE	Edif	"Icons\\Menus Icon.png" // Object menus
 //#endif
 #if !defined(DARKEXT_JSON_FILE_EXTERNAL)
 IDR_EDIF_JSON	Edif	"DarkExt.json"
