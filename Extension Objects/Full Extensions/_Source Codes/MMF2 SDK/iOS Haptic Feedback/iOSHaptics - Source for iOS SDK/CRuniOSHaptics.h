@@ -15,6 +15,17 @@
     UIImpactFeedbackGenerator *lightGen;
     UIImpactFeedbackGenerator *mediumGen;
     UIImpactFeedbackGenerator *heavyGen;
+    UIImpactFeedbackGenerator *softGen;
+    UIImpactFeedbackGenerator *rigidGen;
+
+    UISelectionFeedbackGenerator *selectionGen;
+
+    UINotificationFeedbackGenerator *notificationGen;
+
+    BOOL supportsImpact;
+    BOOL supportsSoftRigid;
+
+    BOOL clampExp;
 }
 
 @end
