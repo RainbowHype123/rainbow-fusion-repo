@@ -50,10 +50,14 @@ CRunascii.prototype = CServices.extend(new CRunExtension(),
 		{
 			case CRunascii.EXP_CHAR2INT:
 			{
+				var text = this.ho.getExpParam();
+				
 				return text && text.length ? (text.charCodeAt(0) & 0xFF) : 0;
 			};
 			case CRunascii.EXP_INT2CHAR:
 			{
+				var value = this.ho.getExpParam();
+				
 				return String.fromCharCode(value & 0xFF);
 			};
 		}

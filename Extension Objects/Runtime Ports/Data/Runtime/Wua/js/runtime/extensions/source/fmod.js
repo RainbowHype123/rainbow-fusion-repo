@@ -1,18 +1,17 @@
 //----------------------------------------------------------------------------------
 //
-// CRunascii : ASCII Object
+// CRunfmod : FMod object
 //
 //----------------------------------------------------------------------------------
 
-CRunascii.EXP_CHAR2INT = 0;
-CRunascii.EXP_INT2CHAR = 1;
+CRunfmod.EXP_FLOATMODULUS = 0;
 
-function CRunascii()
+function CRunfmod()
 {
 	CRunExtension.call(this);
 }
 
-CRunascii.prototype = 
+CRunfmod.prototype = 
 {
 	getNumberOfConditions: function ()
 	{
@@ -48,21 +47,19 @@ CRunascii.prototype =
 	{
 		switch (num)
 		{
-			case CRunascii.EXP_CHAR2INT:
+			case CRunfmod.EXP_FLOATMODULUS:
 			{
-				var text = this.ho.getExpParam();
+				var a = this.ho.getExpParam();
+				var b = this.ho.getExpParam();
 				
-				return text && text.length ? (text.charCodeAt(0) & 0xFF) : 0;
-			};
-			case CRunascii.EXP_INT2CHAR:
-			{
-				var value = this.ho.getExpParam();
-				
-				return String.fromCharCode(value & 0xFF);
+				if (b === 0)
+					return 0;
+
+				return a % b;
 			};
 		}
 		return 0;
 	}
 };
 
-CServices.extend(CRunExtension, CRunascii);
+CServices.extend(CRunExtension, CRunfmod);

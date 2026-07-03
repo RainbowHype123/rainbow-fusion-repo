@@ -50,10 +50,14 @@ CRunAsciiChar.prototype =
 		{
 			case CRunAsciiChar.EXP_CHAR2INDEX:
 			{
+				var text = this.ho.getExpParam();
+				
 				return text && text.length ? (text.charCodeAt(0) & 0xFF) : 0;
 			};
 			case CRunAsciiChar.EXP_INDEX2CHAR:
 			{
+				var value = this.ho.getExpParam();
+				
 				return String.fromCharCode(value & 0xFF);
 			};
 		}
