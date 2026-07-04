@@ -205,6 +205,22 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunOpenURLs();
 	        }
+			if (string.Compare(name, "fmod")==0)
+	        {
+		        pObject=new CRunfmod();
+	        }
+			if (string.Compare(name, "ascii")==0)
+	        {
+		        pObject=new CRunascii();
+	        }
+			if (string.Compare(name, "AsciiChar")==0)
+	        {
+		        pObject=new CRunAsciiChar();
+	        }
+			if (string.Compare(name, "IntegerSplit")==0)
+	        {
+		        pObject=new CRunIntegerSplit();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch") == 0)
