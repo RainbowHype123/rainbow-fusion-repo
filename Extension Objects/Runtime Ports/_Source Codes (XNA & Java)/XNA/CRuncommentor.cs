@@ -1,4 +1,5 @@
 ﻿// commentor object - XNA port (All Platforms)
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace RuntimeXNA.Extensions
                 case CND_COMMENT:
                     return true;
             }
-            return false;//won't happen
+            return false; // Won't happen (?)
         }
 
         public override void action(int num, CActExtension act)
@@ -55,10 +56,6 @@ namespace RuntimeXNA.Extensions
 
         public override CValue expression(int num)
         {
-            switch (num)
-            {
-                // no expressions
-            }
             return new CValue(0);// (Usually) won't be used
         }
     }

@@ -1,4 +1,5 @@
-﻿// commentor object - XNA port (All Platforms)
+﻿// Advanced Comment Object - XNA port (All Platforms)
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace RuntimeXNA.Extensions
         const int CND_TXTCAPCOMMENT = 7;
         const int CND_TXTCAPNOTE = 8;
         const int CND_TXTCAPREMINDER = 9;
-        const int CND_TXTCAPIMPORTANT = 10; // Huh, no CND_LAST
+        const int CND_TXTCAPIMPORTANT = 10; // Probably no harm in adding CND_LAST here
 
         const int ACT_COMMENT = 0;
         const int ACT_TXTREGCOMMENT = 1;
@@ -81,7 +82,7 @@ namespace RuntimeXNA.Extensions
 				case CND_TXTCAPIMPORTANT:
 					return true;
             }
-            return false;//won't happen
+            return false;
         }
 
         public override void action(int num, CActExtension act)
@@ -115,11 +116,7 @@ namespace RuntimeXNA.Extensions
 
         public override CValue expression(int num)
         {
-            switch (num)
-            {
-                // no expressions
-            }
-            return new CValue(0);// (Usually) won't be used
+            return new CValue(0);
         }
     }
 }

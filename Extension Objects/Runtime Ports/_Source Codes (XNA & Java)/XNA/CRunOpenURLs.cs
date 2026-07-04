@@ -1,4 +1,4 @@
-﻿// FMod Object - XNA port (All Platforms)
+﻿// OpenURLs - XNA port (Windows & Windows Phone)
 
 using System;
 using System.Collections.Generic;
@@ -19,11 +19,11 @@ using RuntimeXNA.Movements;
 
 namespace RuntimeXNA.Extensions
 {
-    class CRunfmod : CRunExtension
+    class CRunOpenURLs : CRunExtension
     {
         //const int CND_LAST = 0;
-
-        const int EXP_FLOATMODULUS = 0;
+        
+        const int ACT_OPENURL = 0;
 
         public override int getNumberOfConditions()
         {
@@ -42,23 +42,28 @@ namespace RuntimeXNA.Extensions
 
         public override void action(int num, CActExtension act)
         {
-            // No actions
+            switch (num)
+            {
+                case ACT_OPENURL:
+                {
+                    string url = act.getParamExpression(rh, 0);
+
+                    #if WINDOWS
+                        Process.Start(url);
+                    #elif WINDOWS_PHONE
+                        WebBrowserTask browser = new WebBrowserTask();
+                        browser.Uri = new Uri(url);
+                        browser.Show();
+                    #elif XBOX
+                        // Xbox-specific implementation. (Idk how it would be implemented on Xbox.)
+                    #endif
+                    break;
+                }
+            }
         }
 
         public override CValue expression(int num)
         {
-            switch (num)
-            {
-                case EXP_FLOATMODULUS:
-				{
-                    double value1 = ho.getExpParam().GetDouble();
-                    double value2 = ho.getExpParam().GetDouble();
-                    //float value1 = ho.getExpParam().GetFloat();
-                    //float value2 = ho.getExpParam().GetFloat();
-
-                    return new CValue(value1 % value2);
-                }
-            }
             return new CValue(0);
         }
     }

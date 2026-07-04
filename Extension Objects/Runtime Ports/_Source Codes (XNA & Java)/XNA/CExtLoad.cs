@@ -1,8 +1,9 @@
 ﻿//----------------------------------------------------------------------------------
 //
-// CEXTLOADER: Chargement des extensions
+// CEXTLOADER: Chargement des extensions / Loading extensions
 //
 //----------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -243,6 +244,5 @@ namespace RuntimeXNA.Extensions
 //F01END	        	
 	        return pObject;
         }
-
     }
 }
