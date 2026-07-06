@@ -26,6 +26,11 @@
     BOOL supportsSoftRigid;
 
     BOOL clampExp;
-}
 
+    NString* lastHapticName;
+    int lastHapticIndex;
+
+    int lastErrorCode;
+    NString* lastErrorMessage;
+}
 @end

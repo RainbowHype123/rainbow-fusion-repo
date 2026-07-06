@@ -14,6 +14,7 @@
 
 #import <CoreHaptics/CoreHaptics.h> // For advanced haptics support check
 
+// Haptic IDs
 #define LEGACY_VIBRATE    0
 #define HAPTIC_LIGHT      1
 #define HAPTIC_MEDIUM     2
@@ -25,7 +26,12 @@
 #define HAPTIC_WARNING    8
 #define HAPTIC_ERROR      9
 
-// Condition IDs
+// Error codes
+#define ERR_IOS10_REQUIRED      0
+#define ERR_IOS13_REQUIRED      1
+#define ERR_OUT_OF_INDEX_RANGE  2
+
+// Condition IDs (Fusion)
 #define CND_ONLEGACYVIBRATE         0
 #define CND_ONLIGHTHAPTIC           1
 #define CND_ONMEDIUMHAPTIC          2
@@ -42,7 +48,7 @@
 #define CND_ISEMULATINGHAPTICS      13
 #define CND_LAST                    14
 
-// Action IDs
+// Action IDs (Fusion)
 #define ACT_LEGACYVIBRATE           0
 #define ACT_LIGHTHAPTIC             1
 #define ACT_MEDIUMHAPTIC            2
@@ -54,9 +60,10 @@
 #define ACT_NOTIFWARNINGHAPTIC      8
 #define ACT_NOTIFERRORHAPTIC        9
 #define ACT_PLAYHAPTICBYEXP         10
-#define ACT_TOGGLEEMULATIONFLAG     11
+#define ACT_TOGGLEOUTOFRANGEERROR   11
+#define ACT_TOGGLEEMULATIONFLAG     12
 
-// Expression IDs
+// Expression IDs (Fusion)
 #define EXP_LASTHAPTICNAME          0
 #define EXP_LASTHAPTICINDEX         1
 #define EXP_LASTERRORCODE           2
@@ -71,25 +78,30 @@
 
 -(BOOL)createRunObject:(CFile*)file withCOB:(CCreateObjectInfo*)cob andVersion:(int)version
 {
+    supportsImpact = NO;
+    supportsSoftRigid = NO;
+
+    lastHapticName = @"N/A";
+    lastHapticIndex = -1;
+
+    lastErrorCode = -1;
+    lastErrorMessage = @"N/A";
+    
     if (@available(iOS 10.0, *))
     {
+        supportsImpact = YES;
         lightGen        = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
         mediumGen       = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
         heavyGen        = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
         if (@available(iOS 13.0, *))
         {
+            supportsSoftRigid = YES;
             softGen     = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleSoft];
             rigidGen    = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleRigid];
         }
         selectionGen    = [[UISelectionFeedbackGenerator alloc] init];
         notificationGen = [[UINotificationFeedbackGenerator alloc] init];
     }
-
-    supportsImpact = NO;
-    supportsSoftRigid = NO;
-
-    if (@available(iOS 10.0, *)) { supportsImpact = YES; }
-    if (@available(iOS 13.0, *)) { supportsSoftRigid = YES; }
 
     return YES;
 }
@@ -147,63 +159,111 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Actions
 
--(void)actLegacyVibrate:(CActExtension*)act
+-(void)actLegacyVibrate
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    // Trigger "on legacy vibrate" condition
 }
 
--(void)actLightHaptic:(CActExtension*)act
+-(void)actLightHaptic
 {
     [lightGen prepare];
     [lightGen impactOccurred];
+    // Trigger "on light haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actMediumHaptic:(CActExtension*)act
+-(void)actMediumHaptic
 {
     [mediumGen prepare];
     [mediumGen impactOccurred];
+    // Trigger "on medium haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actHeavyHaptic:(CActExtension*)act
+-(void)actHeavyHaptic
 {
     [heavyGen prepare];
     [heavyGen impactOccurred];
+    // Trigger "on heavy haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actSoftHaptic:(CActExtension*)act
+-(void)actSoftHaptic
 {
     [softGen prepare];
     [softGen impactOccurred];
+    // Trigger "on soft haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actRigidHaptic:(CActExtension*)act
+-(void)actRigidHaptic
 {
     [rigidGen prepare];
     [rigidGen impactOccurred];
+    // Trigger "on rigid haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actSelectionHaptic:(CActExtension*)act
+-(void)actSelectionHaptic
 {
     [selectionGen prepare];
     [selectionGen selectionChanged];
+    // Trigger "on selection haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actSuccessHaptic:(CActExtension*)act
+-(void)actSuccessHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeSuccess];
+    // Trigger "on success haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actWarningHaptic:(CActExtension*)act
+-(void)actWarningHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeWarning];
+    // Trigger "on warning haptic" condition
+    // Trigger "on any haptic" condition
 }
 
--(void)actErrorHaptic:(CActExtension*)act
+-(void)actErrorHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeError];
+    // Trigger "on error haptic" condition
+    // Trigger "on any haptic" condition
+}
+
+-(void)reportError:(int)errorCode
+{
+    // Error func
+
+    lastErrorCode = errorCode;
+
+    switch (errorCode)
+    {
+        case ERR_IOS10_REQUIRED:
+        {
+            lastErrorMessage = @"The requested haptic requires iOS 10 or later.";
+            // Trigger "on error" condition
+            break;
+        }
+        case ERR_IOS13_REQUIRED:
+        {
+            lastErrorMessage = @"The requested haptic requires iOS 13 or later.";
+            // Trigger "on error" condition
+            break;
+        }
+        case ERR_OUT_OF_INDEX_RANGE:
+        {
+            lastErrorMessage = @"The requested haptic ID was outside valid range (0-9)";
+            // Trigger "on error" condition
+            break;
+        }
+    }
 }
 
 -(void)playHaptic:(int)hapticType
@@ -214,12 +274,14 @@
     // HAPTIC_SELECTION = 6
     // HAPTIC_SUCCESS = 7 | HAPTIC_WARNING = 8 | HAPTIC_ERROR = 9
 
+    // I plan to add a toggleable clamping function here, which if false and out of range would trigger an "out of range" error on the user/dev's end
+
     if ((hapticType >= HAPTIC_LIGHT && hapticType <= HAPTIC_HEAVY) ||
         (hapticType >= HAPTIC_SELECTION && hapticType <= HAPTIC_ERROR))
     {
         if (!supportsImpact)
         {
-            [self reportError:ERROR_IOS10_REQUIRED];
+            [self reportError:ERR_IOS10_REQUIRED];
             return;
         }
     }
@@ -228,42 +290,59 @@
     {
         if (!supportsSoftRigid)
         {
-            [self reportError:ERROR_IOS13_REQUIRED];
+            [self reportError:ERR_IOS13_REQUIRED];
             return;
         }
     }
 
+    static NSString * const HapticNames[] =
+    {
+        @"Legacy Vibrate",
+        @"Light",
+        @"Medium",
+        @"Heavy",
+        @"Soft",
+        @"Rigid",
+        @"Selection",
+        @"Success",
+        @"Warning",
+        @"Error"
+    };
+
+    lastHapticIndex = hapticType;
+    lastHapticName = HapticNames[hapticType];
+
     switch (hapticType)
     {
-        case ACT_LEGACYVIBRATE:
-            [self actLegacyVibrate:hapticType];
+        case LEGACY_VIBRATE:
+            [self actLegacyVibrate];
             break;
-        case ACT_LIGHTHAPTIC:
-            [self actLightHaptic:hapticType];
+        case HAPTIC_LIGHT:
+            [self actLightHaptic];
             break;
-        case ACT_MEDIUMHAPTIC:
-            [self actMediumHaptic:hapticType];
+        case HAPTIC_MEDIUM:
+            [self actMediumHaptic];
             break;
-        case ACT_HEAVYHAPTIC:
-            [self actHeavyHaptic:hapticType];
+        case HAPTIC_HEAVY:
+            [self actHeavyHaptic];
             break;
-        case ACT_SOFTHAPTIC:
-            [self actSoftHaptic:hapticType];
+        case HAPTIC_SOFT:
+            [self actSoftHaptic];
             break;
-        case ACT_RIGIDHAPTIC:
-            [self actRigidHaptic:hapticType];
+        case HAPTIC_RIGID:
+            [self actRigidHaptic];
             break;
-        case ACT_SELECTIONHAPTIC:
-            [self actSelectionHaptic:hapticType];
+        case HAPTIC_SELECTION:
+            [self actSelectionHaptic];
             break;
-        case ACT_NOTIFSUCCESSHAPTIC:
-            [self actSuccessHaptic:hapticType];
+        case HAPTIC_SUCCESS:
+            [self actSuccessHaptic];
             break;
-        case ACT_NOTIFWARNINGHAPTIC:
-            [self actWarningHaptic:hapticType];
+        case HAPTIC_WARNING:
+            [self actWarningHaptic];
             break;
-        case ACT_NOTIFERRORHAPTIC:
-            [self actErrorHaptic:hapticType];
+        case HAPTIC_ERROR:
+            [self actErrorHaptic];
             break;
     }
 }
@@ -286,11 +365,14 @@
             break;
         case ACT_PLAYHAPTICBYEXP:
         {
-            int type = MAX(HAPTIC_LEGACY, MIN([act getParamExpression:rh withNum:0], HAPTIC_ERROR));
+            int type = MAX(LEGACY_VIBRATE, MIN([act getParamExpression:rh withNum:0], HAPTIC_ERROR));
 
             [self playHaptic:type];
             break;
         }
+        case ACT_TOGGLEOUTOFRANGEERROR:
+            clampExp = /*Get parameter 0 for this action and turn it from int to bool*/NO;
+            break;
         case ACT_TOGGLEEMULATIONFLAG:
             break;
     }
@@ -303,13 +385,13 @@
 	switch (num)
 	{
 		case EXP_LASTHAPTICNAME:
-			return 0;
+			return lastHapticName;
         case EXP_LASTHAPTICINDEX:
-			return 0;
+			return lastHapticIndex;
         case EXP_LASTERRORCODE:
-			return 0;
+			return lastErrorCode;
         case EXP_LASTERRORMESSAGE:
-			return 0;
+			return lastErrorMessage;
 	}
 	CValue* v=[rh getTempValue:0];
 	[v forceDouble:ret];
