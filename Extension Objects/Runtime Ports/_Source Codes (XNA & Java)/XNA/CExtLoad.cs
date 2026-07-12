@@ -222,6 +222,10 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunIntegerSplit();
 	        }
+			if (string.Compare(name, "LocalIP") == 0)
+            {
+                pObject = new CRunLocalIP();
+            }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch") == 0)
