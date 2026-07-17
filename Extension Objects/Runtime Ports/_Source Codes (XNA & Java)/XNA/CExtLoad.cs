@@ -41,7 +41,7 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunKcArray();
 	        }
-            if (string.Compare(name, "KcDbl") == 0)
+            if (string.Compare(name, "KcDbl")==0)
             {
                 pObject = new CRunKcDbl();
             }
@@ -173,11 +173,11 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunkclist();
 	        }
-            if (string.Compare(name, "kccombo") == 0)
+            if (string.Compare(name, "kccombo")==0)
             {
                 pObject = new CRunkccombo();
             }
-            if (string.Compare(name, "kcedit") == 0)
+            if (string.Compare(name, "kcedit")==0)
             {
                 pObject = new CRunkcedit();
             }
@@ -222,25 +222,33 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunIntegerSplit();
 	        }
-			if (string.Compare(name, "LocalIP") == 0)
+			if (string.Compare(name, "LocalIP")==0)
             {
                 pObject = new CRunLocalIP();
             }
+			if (string.Compare(name, "Behind_The_Runtime")==0)
+            {
+                pObject = new CRunBehind_The_Runtime();
+            }
+			if (string.Compare(name, "POW_2o3")==0)
+            {
+                pObject = new CRunPOW_2o3();
+            }
 			// ------------------
 #if WINDOWS_PHONE
-            if (string.Compare(name, "MultipleTouch") == 0)
+            if (string.Compare(name, "MultipleTouch")==0)
             {
                 pObject = new CRunMultipleTouch();
             }
-            if (string.Compare(name, "JoystickControl") == 0)
+            if (string.Compare(name, "JoystickControl")==0)
             {
                 pObject = new CRunJoystickControl();
             }
-            if (string.Compare(name, "Accelerometer") == 0)
+            if (string.Compare(name, "Accelerometer")==0)
             {
                 pObject = new CRunAccelerometer();
             }
-            if (string.Compare(name, "Location") == 0)
+            if (string.Compare(name, "Location")==0)
             {
                 pObject = new CRunLocation();
             }
