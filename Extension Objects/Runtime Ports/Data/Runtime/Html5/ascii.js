@@ -4,8 +4,8 @@
 //
 //----------------------------------------------------------------------------------
 
-CRunascii.EXP_CHAR2INT = 0;
-CRunascii.EXP_INT2CHAR = 1;
+CRunascii.EXP_INT2CHAR = 0;
+CRunascii.EXP_CHAR2INT = 1;
 
 function CRunascii()
 {
@@ -48,17 +48,17 @@ CRunascii.prototype = CServices.extend(new CRunExtension(),
 	{
 		switch (num)
 		{
-			case CRunascii.EXP_CHAR2INT:
-			{
-				var text = this.ho.getExpParam();
-				
-				return text && text.length ? (text.charCodeAt(0) & 0xFF) : 0;
-			};
 			case CRunascii.EXP_INT2CHAR:
 			{
 				var value = this.ho.getExpParam();
 				
 				return String.fromCharCode(value & 0xFF);
+			};
+			case CRunascii.EXP_CHAR2INT:
+			{
+				var text = this.ho.getExpParam();
+				
+				return text && text.length ? (text.charCodeAt(0) & 0xFF) : 0;
 			};
 		}
 		return 0;

@@ -1,33 +1,33 @@
 //----------------------------------------------------------------------------------
 //
-// CRunkcRuntime : Runtime Object
+// CRunKcRuntime : Runtime Object
 //
 //----------------------------------------------------------------------------------
 
-CRunkcRuntime.CND_RTANACONDA = 0;
-CRunkcRuntime.CND_RTANDROID = 1;
-CRunkcRuntime.CND_RTEXESTANDARD = 2;
-CRunkcRuntime.CND_RTEXEHWA = 3;
-CRunkcRuntime.CND_RTIOS = 4;
-CRunkcRuntime.CND_RTJAVA = 5;
-CRunkcRuntime.CND_RTJAVAMOBILE = 6;
-CRunkcRuntime.CND_RTMAC = 7;
-CRunkcRuntime.CND_RTSWF = 8;
-CRunkcRuntime.CND_RTXNA = 9;
-CRunkcRuntime.CND_LAST = 10;
+CRunKcRuntime.CND_RTANACONDA = 0;
+CRunKcRuntime.CND_RTANDROID = 1;
+CRunKcRuntime.CND_RTEXESTANDARD = 2;
+CRunKcRuntime.CND_RTEXEHWA = 3;
+CRunKcRuntime.CND_RTIOS = 4;
+CRunKcRuntime.CND_RTJAVA = 5;
+CRunKcRuntime.CND_RTJAVAMOBILE = 6;
+CRunKcRuntime.CND_RTMAC = 7;
+CRunKcRuntime.CND_RTSWF = 8;
+CRunKcRuntime.CND_RTXNA = 9;
+CRunKcRuntime.CND_LAST = 10;
 
-CRunkcRuntime.EXP_GETRTNAME = 0;
+CRunKcRuntime.EXP_GETRTNAME = 0;
 
-function CRunkcRuntime()
+function CRunKcRuntime()
 {
 	
 }
 
-CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
+CRunKcRuntime.prototype = CServices.extend(new CRunExtension(),
 {
 	getNumberOfConditions: function ()
 	{
-		return CRunkcRuntime.CND_LAST;
+		return CRunKcRuntime.CND_LAST;
 	},
 
 	createRunObject: function (file, cob, version)
@@ -49,25 +49,25 @@ CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
 	{
 		switch (num)
 		{
-			case CRunkcRuntime.CND_RTANACONDA:
+			case CRunKcRuntime.CND_RTANACONDA:
 				return false;
-			case CRunkcRuntime.CND_RTANDROID:
+			case CRunKcRuntime.CND_RTANDROID:
 				return false;
-			case CRunkcRuntime.CND_RTEXESTANDARD:
+			case CRunKcRuntime.CND_RTEXESTANDARD:
 				return false;
-			case CRunkcRuntime.CND_RTEXEHWA:
+			case CRunKcRuntime.CND_RTEXEHWA:
 				return false;
-			case CRunkcRuntime.CND_RTIOS:
+			case CRunKcRuntime.CND_RTIOS:
 				return false;
-			case CRunkcRuntime.CND_RTJAVA:
+			case CRunKcRuntime.CND_RTJAVA:
 				return false;
-			case CRunkcRuntime.CND_RTJAVAMOBILE:
+			case CRunKcRuntime.CND_RTJAVAMOBILE:
 				return false;
-			case CRunkcRuntime.CND_RTMAC:
+			case CRunKcRuntime.CND_RTMAC:
 				return false;
-			case CRunkcRuntime.CND_RTSWF:
+			case CRunKcRuntime.CND_RTSWF:
 				return false;
-			case CRunkcRuntime.CND_RTXNA:
+			case CRunKcRuntime.CND_RTXNA:
 				return false;
 		}
 		return false;
@@ -77,7 +77,7 @@ CRunkcRuntime.prototype = CServices.extend(new CRunExtension(),
 	{
 		switch (num)
 		{
-			case CRunkcRuntime.EXP_GETRTNAME:
+			case CRunKcRuntime.EXP_GETRTNAME:
 				return "HTML5";
 		}
 		return 0;

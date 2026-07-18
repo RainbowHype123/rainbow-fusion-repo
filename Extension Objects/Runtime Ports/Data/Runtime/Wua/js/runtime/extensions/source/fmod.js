@@ -49,13 +49,13 @@ CRunfmod.prototype =
 		{
 			case CRunfmod.EXP_FLOATMODULUS:
 			{
-				var a = this.ho.getExpParam();
-				var b = this.ho.getExpParam();
+				var a = Math.fround(this.ho.getExpParam());
+				var b = Math.fround(this.ho.getExpParam());
 				
 				if (b === 0)
 					return 0;
 
-				return a % b;
+				return Math.fround(a % b);
 			};
 		}
 		return 0;
