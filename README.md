@@ -8,4 +8,6 @@ If you want to remove something that doesn't work as well as you intended, follo
 - Unicode ports: You'll have to add an ANSI copy of the extension, transfer all the references from the Unicode version, and then use the MFACFG technique to restore the original MFX name on the ANSI copy.
 - Runtime ports: Simply remove the files out of your copy of Clickteam.
 
+Disclaimer: There was some AI usage for guiding myself in creating these, but the ports are NOT fully vibe-coded.
+
 Lastly, thanks for stopping by, and I hope you enjoy your time here! :D
