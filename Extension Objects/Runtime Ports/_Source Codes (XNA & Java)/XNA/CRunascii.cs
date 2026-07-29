@@ -1,5 +1,4 @@
 ﻿// ASCII Object - XNA port (All Platforms)
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +22,8 @@ namespace RuntimeXNA.Extensions
     {
         //const int CND_LAST = 0;
 
-        const int EXP_CHAR2INT = 0;
-        const int EXP_INT2CHAR = 1;
+        const int EXP_INT2CHAR = 0;
+        const int EXP_CHAR2INT = 1;
 
         public override int getNumberOfConditions()
         {
