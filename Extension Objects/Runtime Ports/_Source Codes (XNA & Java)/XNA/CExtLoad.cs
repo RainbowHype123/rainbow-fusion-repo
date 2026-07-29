@@ -234,6 +234,10 @@ namespace RuntimeXNA.Extensions
             {
                 pObject = new CRunPOW_2o3();
             }
+			if (string.Compare(name, "bitwisehelper")==0)
+	        {
+		        pObject=new CRunbitwisehelper();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
