@@ -238,6 +238,14 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunbitwisehelper();
 	        }
+			if (string.Compare(name, "XnaPlatform")==0)
+	        {
+		        pObject=new CRunXnaPlatform();
+	        }
+			if (string.Compare(name, "SunkenCamera")==0)
+	        {
+		        pObject=new CRunSunkenCamera();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
