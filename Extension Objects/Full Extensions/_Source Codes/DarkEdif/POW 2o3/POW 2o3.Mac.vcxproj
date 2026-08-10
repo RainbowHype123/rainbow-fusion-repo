@@ -35,7 +35,7 @@
     <Import Project="POW 2o3.Shared.vcxitems" Label="Shared" />
   </ImportGroup>
   <ItemGroup>
-	<ClInclude Include="..\Inc\Mac\MMFMacMasterHeader.hpp" />
+    <ClInclude Include="..\Inc\Mac\MMFMacMasterHeader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Condition="exists('$(SolutionDir)Temp\$(ExtName)\Mac\CRun$(TargetNameUnderscores).hpp')" Include="$(SolutionDir)Temp\$(ExtName)\Mac\CRun$(TargetNameUnderscores).hpp" />

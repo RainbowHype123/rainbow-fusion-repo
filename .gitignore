@@ -21,3 +21,6 @@ output-metadata.json
 # Folder of unreleased stuff
 /_IGNORE
 *_IGNORE.zip
+
+# DarkEdif-related
+FusionSDKConfig.ini

@@ -28,6 +28,10 @@ extern "C" void POW_2o3_expressionJump(void * cppExtPtr, int ID);
 extern "C" void * POW_2o3_createRunObject(void* file, void * cob, int version, void * objCExtPtr);
 extern "C" short POW_2o3_handleRunObject(void * cppExtPtr);
 extern "C" void POW_2o3_destroyRunObject(void * cppExtPtr, bool bFast);
+#if PAUSABLE_EXTENSION
+extern "C" void POW_2o3_pauseRunObject(void* cppExtPtr);
+extern "C" void POW_2o3_continueRunObject(void* cppExtPtr);
+#endif
 #endif
 
 static int initedPOW_2o3CPP = 0;
@@ -46,7 +50,9 @@ static int initedPOW_2o3CPP = 0;
 -(BOOL)condition:(int)num withCndExtension:(CCndExtension*)cnd;
 -(void)action:(int)num withActExtension:(CActExtension*)act;
 -(CValue*)expression:(int)num;
+#if PAUSABLE_EXTENSION
 -(void)pauseRunObject;
 -(void)continueRunObject;
+#endif
 
 @end

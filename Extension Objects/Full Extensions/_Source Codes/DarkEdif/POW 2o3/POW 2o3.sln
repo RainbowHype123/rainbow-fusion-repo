@@ -1,27 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.37327.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.37507.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Android", "POW 2o3.Android.vcxproj", "{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Android", "DarkEdif\POW 2o3\POW 2o3.Android.vcxproj", "{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.iOS", "POW 2o3.iOS.vcxproj", "{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.iOS", "DarkEdif\POW 2o3\POW 2o3.iOS.vcxproj", "{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Mac", "POW 2o3.Mac.vcxproj", "{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Mac", "DarkEdif\POW 2o3\POW 2o3.Mac.vcxproj", "{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Shared", "POW 2o3.Shared.vcxitems", "{D98DEB46-4B54-454A-8907-0C6BC75CC9B6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Shared", "DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems", "{D98DEB46-4B54-454A-8907-0C6BC75CC9B6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Windows", "POW 2o3.Windows.vcxproj", "{5FCDB941-F2E7-4803-81AF-FE14E10C1F9D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POW 2o3.Windows", "DarkEdif\POW 2o3\POW 2o3.Windows.vcxproj", "{5FCDB941-F2E7-4803-81AF-FE14E10C1F9D}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		POW 2o3.Shared.vcxitems*{5fcdb941-f2e7-4803-81af-fe14e10c1f9d}*SharedItemsImports = 4
-		POW 2o3.Shared.vcxitems*{d98deb46-4b54-454a-8907-0c6bc75cc9b6}*SharedItemsImports = 9
-		POW 2o3.Shared.vcxitems*{0e9dfa51-0daf-4965-860b-ef44cedcb499}*SharedItemImports = 4
-		POW 2o3.Shared.vcxitems*{5fcdb941-f2e7-4803-81af-fe14e10c1f9d}*SharedItemImports = 4
-		POW 2o3.Shared.vcxitems*{bae4cdb8-3773-47c7-8275-8da3dbd4539d}*SharedItemImports = 4
-		POW 2o3.Shared.vcxitems*{d9214076-bca9-44e7-abdd-2ef2aa3a4654}*SharedItemImports = 4
-		POW 2o3.Shared.vcxitems*{d98deb46-4b54-454a-8907-0c6bc75cc9b6}*SharedItemImports = 9
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{0e9dfa51-0daf-4965-860b-ef44cedcb499}*SharedItemsImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{5fcdb941-f2e7-4803-81af-fe14e10c1f9d}*SharedItemsImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{bae4cdb8-3773-47c7-8275-8da3dbd4539d}*SharedItemsImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{d9214076-bca9-44e7-abdd-2ef2aa3a4654}*SharedItemsImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{d98deb46-4b54-454a-8907-0c6bc75cc9b6}*SharedItemsImports = 9
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{0e9dfa51-0daf-4965-860b-ef44cedcb499}*SharedItemImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{5fcdb941-f2e7-4803-81af-fe14e10c1f9d}*SharedItemImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{bae4cdb8-3773-47c7-8275-8da3dbd4539d}*SharedItemImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{d9214076-bca9-44e7-abdd-2ef2aa3a4654}*SharedItemImports = 4
+		DarkEdif\POW 2o3\POW 2o3.Shared.vcxitems*{d98deb46-4b54-454a-8907-0c6bc75cc9b6}*SharedItemImports = 9
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Unicode|ARM = Debug Unicode|ARM
@@ -51,9 +54,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|ARM.ActiveCfg = Debug|ARM
-		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|ARM.Build.0 = Debug|ARM
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|ARM64.ActiveCfg = Debug|ARM64
-		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|ARM64.Build.0 = Debug|ARM64
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|x64.ActiveCfg = Debug|x64
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|x64.Build.0 = Debug|x64
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Debug Unicode|x86.ActiveCfg = Debug|x86
@@ -90,12 +91,11 @@ Global
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Runtime|x64.Build.0 = Runtime|x64
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Runtime|x86.ActiveCfg = Runtime|x86
 		{BAE4CDB8-3773-47C7-8275-8DA3DBD4539D}.Runtime|x86.Build.0 = Runtime|x86
-		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM.ActiveCfg = Debug|ARM
-		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM.Build.0 = Debug|ARM
+		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM.ActiveCfg = Debug|ARM64
+		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM.Build.0 = Debug|ARM64
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM64.ActiveCfg = Debug|ARM64
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|ARM64.Build.0 = Debug|ARM64
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|x64.ActiveCfg = Debug|x64
-		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|x64.Build.0 = Debug|x64
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|x86.ActiveCfg = Debug|x86
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug Unicode|x86.Build.0 = Debug|x86
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -131,10 +131,10 @@ Global
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Runtime|x86.ActiveCfg = Runtime|x86
 		{0E9DFA51-0DAF-4965-860B-EF44CEDCB499}.Runtime|x86.Build.0 = Runtime|x86
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|ARM.ActiveCfg = Debug|ARM64
+		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|ARM.Build.0 = Debug|ARM64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|ARM64.ActiveCfg = Debug|ARM64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|ARM64.Build.0 = Debug|ARM64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|x64.ActiveCfg = Debug|x64
-		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|x64.Build.0 = Debug|x64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug Unicode|x86.ActiveCfg = Debug|ARM64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug|ARM.ActiveCfg = Debug|ARM64
 		{D9214076-BCA9-44E7-ABDD-2EF2AA3A4654}.Debug|ARM64.ActiveCfg = Debug|ARM64

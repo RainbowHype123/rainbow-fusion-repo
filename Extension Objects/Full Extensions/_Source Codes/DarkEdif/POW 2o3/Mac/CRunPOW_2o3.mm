@@ -92,6 +92,7 @@
 	POW_2o3_expressionJump(cptr, paramNum);
 	return expRet;
 }
+#if PAUSABLE_EXTENSION
 -(void)pauseRunObject
 {
 	POW_2o3_pauseRunObject(cptr);
@@ -100,6 +101,7 @@
 {
 	POW_2o3_continueRunObject(cptr);
 }
+#endif
 
 @end
 
