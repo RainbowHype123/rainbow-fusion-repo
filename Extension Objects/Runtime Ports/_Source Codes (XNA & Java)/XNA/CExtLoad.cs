@@ -254,6 +254,18 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunBitwiser();
 	        }
+			if (string.Compare(name, "SecToHMS")==0)
+	        {
+		        pObject=new CRunSecToHMS();
+	        }
+			if (string.Compare(name, "StringRepeater")==0)
+	        {
+		        pObject=new CRunStringRepeater();
+	        }
+			if (string.Compare(name, "SubstringReplaceUnicode")==0)
+	        {
+		        pObject=new CRunSubstringReplaceUnicode();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
