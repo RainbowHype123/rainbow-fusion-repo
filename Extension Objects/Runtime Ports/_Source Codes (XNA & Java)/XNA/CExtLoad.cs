@@ -266,6 +266,10 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunSubstringReplaceUnicode();
 	        }
+			if (string.Compare(name, "kcfocus")==0)
+	        {
+		        pObject=new CRunkcfocus();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
