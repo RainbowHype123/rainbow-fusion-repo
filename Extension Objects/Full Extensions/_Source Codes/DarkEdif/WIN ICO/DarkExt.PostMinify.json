@@ -1,0 +1,2 @@
+//639210077284284493
+{"Identifier":"WNIC","Dependencies":"","UK English":{"About":{"Name":"WIN ICO"},"Actions":[{"Parameters":[["Text"]]},{"Parameters":[["Text"]]},{},{"Parameters":[["Integer"]]}],"Conditions":[{"Triggered":true},{"Triggered":true},{"Triggered":true}],"Expressions":[{"Returns":"Text"},{"Returns":"Text"},{"Returns":"Text"},{"Returns":"Text"},{"Returns":"Text"},{"Returns":"Integer"}]}}

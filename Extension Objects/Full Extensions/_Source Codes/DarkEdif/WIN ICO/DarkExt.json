@@ -1,0 +1,130 @@
+﻿{
+	"Identifier": "WNIC",
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "WIN ICO",
+			"Author": "RainbowHype",
+			"Comment": "An extension that changes the application's header and taskbar icon (NOT the EXE file's icon). Made for RayTheRee.",
+			"Copyright": "\u00A9 2026 RainbowHype",
+			"Help": "Help/WIN ICO.chm",
+			"URL": "https://github.com/RainbowHype123/rainbow-fusion-repo"
+		},
+    "ActionMenu": [
+		[ 0, "Set Header and Taskbar icons from small ICO" ],
+		[ 1, "Set Taskbar icon from large ICO" ],
+		"---",
+		[ 2, "Reset icons to app defaults" ],
+		[ 3, "Set auto-reset property" ],
+		"---"
+    ],
+	"ConditionMenu": [
+		[ 0, "On icons changed (small)" ],
+		[ 1, "On taskbar icon changed (large)" ],
+		"---",
+		[ 2, "On icons reset" ],
+		"---"
+	],
+	"ExpressionMenu": [
+		[ 0, "Get MMF window handle" ],
+		[ 1, "Get header icon handle" ],
+		[ 2, "Get taskbar icon handle" ],
+		"---",
+		[ 3, "Get OG header icon handle" ],
+		[ 4, "Get OG taskbar icon handle" ],
+		[ 5, "Get auto-reset property" ],
+		"---"
+	],
+    "Actions": [
+      {
+        "Title": "Set Header and Taskbar icons (small): %0",
+        "Parameters": [
+          [ "Text", "Path to .ico file (16x16 or higher quality recommended)" ]
+        ]
+      },
+	  {
+        "Title": "Set Taskbar icon (large): %0",
+        "Parameters": [
+          [ "Text", "Path to .ico file (32x32 or higher quality recommended)" ]
+        ]
+      },
+	  {
+        "Title": "Reset default icons"
+      },
+	  {
+        "Title": "Set auto-reset property to %0",
+        "Parameters": [
+          [ "Integer", "0 = FALSE | 1 = TRUE" ]
+        ]
+      }
+    ],
+		"Conditions": [
+			{
+				"Title": "%o : On icons changed (SMALL ICON)",
+				"Triggered": true
+			},
+			{
+				"Title": "%o : On taskbar icon changed (LARGE ICON)",
+				"Triggered": true
+			},
+			{
+				"Title": "%o : On icons reset",
+				"Triggered": true
+			}
+		],
+		"Expressions": [
+			{
+				"Title": "MMF_Hwnd$(",
+				"Returns": "Text"
+			},
+			{
+				"Title": "HeaderIconHwnd$(",
+				"Returns": "Text"
+			},
+			{
+				"Title": "TaskbarIconHwnd$(",
+				"Returns": "Text"
+			},
+			{
+				"Title": "OGHeaderIconHwnd$(",
+				"Returns": "Text"
+			},
+			{
+				"Title": "OGTaskbarIconHwnd$(",
+				"Returns": "Text"
+			},
+			{
+				"Title": "AutoResetFlag(",
+				"Returns": "Integer"
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Auto-Reset icons on object destruction",
+				"Info": "If enabled, the 'reset icons' action is automatically called upon destroying the object (or switching frames, since that destroys all objects).",
+				"Type": "Checkbox",
+				"DefaultState": false,
+				"Bold": true
+			},
+			{
+                "Title": "Additional Extension Info",
+                "Info": "Please be mindful of everything in here.",
+                "Type": "Group"
+            },
+			{
+				"Title": "Version",
+				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
+				"Type": "Text",
+				"DefaultState": "v1.0.0.0",
+				"Bold": true
+			},
+			{
+				"Title": "Availabilty",
+				"Info": "Private = Do not distribute without permission! Otherwise, you're fine to do so. (Same rules apply to the source code!)",
+				"Type": "Text",
+				"DefaultState": "Public",
+				"Bold": true
+			}
+		]
+	}
+}
