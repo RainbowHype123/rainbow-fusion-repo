@@ -270,6 +270,18 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunkcfocus();
 	        }
+			if (string.Compare(name, "storefloat")==0)
+	        {
+		        pObject=new CRunstorefloat();
+	        }
+			if (string.Compare(name, "ifelse")==0)
+	        {
+		        pObject=new CRunifelse();
+	        }
+			if (string.Compare(name, "while")==0)
+	        {
+		        pObject=new CRunwhile();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
