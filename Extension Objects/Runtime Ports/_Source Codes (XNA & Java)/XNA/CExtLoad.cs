@@ -282,6 +282,10 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunwhile();
 	        }
+			if (string.Compare(name, "Microtimer")==0)
+	        {
+		        pObject=new CRunMicrotimer();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
