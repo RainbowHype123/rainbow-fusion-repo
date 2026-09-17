@@ -1,26 +1,25 @@
 //----------------------------------------------------------------------------------
 //
-// CRunkctitle : Titlebar Object
+// CRunAppName : Application Name Object
 //
 //----------------------------------------------------------------------------------
 
-CRunkctitle.CND_COMPARETITLE = 0;
-//CRunkctitle.CND_LAST = 1;
+//CRunAppName.CND_LAST = 0;
 
-CRunkctitle.ACT_SETTITLE = 0;
+CRunAppName.ACT_SETTITLE = 0;
 
-CRunkctitle.EXP_GETTITLE = 0;
+CRunAppName.EXP_GETTITLE = 0;
 
-function CRunkctitle()
+function CRunAppName()
 {
 	CRunExtension.call(this);
 }
 
-CRunkctitle.prototype = 
+CRunAppName.prototype = 
 {
 	getNumberOfConditions: function ()
 	{
-		return 1;
+		return 0;
 	},
 
 	createRunObject: function (file, cob, version)
@@ -33,21 +32,8 @@ CRunkctitle.prototype =
 		return 0;
 	},
 
-	destroyRunObject: function (bFast)
-	{
-		
-	},
-
 	condition: function (num, cnd)
 	{
-		switch (num)
-		{
-			case CRunkctitle.CND_COMPARETITLE:
-			{
-				var currentTitle = cnd.getParamExpString(this.rh, 0);
-				return currentTitle == Runtime.getWindowTitle();
-			}
-		}
 		return false;
 	},
 
@@ -55,7 +41,7 @@ CRunkctitle.prototype =
 	{
 		switch (num)
 		{
-			case CRunkctitle.ACT_SETTITLE:
+			case CRunAppName.ACT_SETTITLE:
 				return Runtime.setWindowTitle(act.getParamExpString(this.rh, 0));
 		}
 	},
@@ -64,11 +50,11 @@ CRunkctitle.prototype =
 	{
 		switch (num)
 		{
-			case CRunkctitle.EXP_GETTITLE:
+			case CRunAppName.EXP_GETTITLE:
 				return Runtime.getWindowTitle();
 		}
 		return 0;
 	}
 };
 
-CServices.extend(CRunExtension, CRunkctitle);
+CServices.extend(CRunExtension, CRunAppName);
