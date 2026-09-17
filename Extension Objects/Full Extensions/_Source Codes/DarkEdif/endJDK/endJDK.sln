@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.37327.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "endJDK", "endJDK.vcxproj", "{22CF3933-0CAF-4624-A8D2-870267DF9840}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode|x86 = Debug Unicode|x86
+		Debug|x86 = Debug|x86
+		Edittime Unicode|x86 = Edittime Unicode|x86
+		Edittime|x86 = Edittime|x86
+		Runtime Unicode|x86 = Runtime Unicode|x86
+		Runtime|x86 = Runtime|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Debug Unicode|x86.ActiveCfg = Debug Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Debug Unicode|x86.Build.0 = Debug Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Debug|x86.ActiveCfg = Debug|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Debug|x86.Build.0 = Debug|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Edittime Unicode|x86.ActiveCfg = Edittime Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Edittime Unicode|x86.Build.0 = Edittime Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Edittime|x86.ActiveCfg = Edittime|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Edittime|x86.Build.0 = Edittime|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Runtime Unicode|x86.ActiveCfg = Runtime Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Runtime Unicode|x86.Build.0 = Runtime Unicode|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Runtime|x86.ActiveCfg = Runtime|Win32
+		{22CF3933-0CAF-4624-A8D2-870267DF9840}.Runtime|x86.Build.0 = Runtime|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDE26061-5B4F-4C4A-AD20-6811076B7683}
+	EndGlobalSection
+EndGlobal

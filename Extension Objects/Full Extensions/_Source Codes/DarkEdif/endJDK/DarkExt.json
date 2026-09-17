@@ -1,0 +1,89 @@
+﻿{
+	"Identifier": "EJDK",
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "endJDK",
+			"Author": "RainbowHype",
+			"Comment": "A very simple ext for terminating the JDK. Meant for Android app development in Clickteam Fusion.",
+			"Copyright": "\u00A9 2026 RainbowHype",
+			"Help": "Help/endJDK.chm",
+			"URL": "https://github.com/RainbowHype123/rainbow-fusion-repo"
+		},
+		"ActionMenu": [
+			[ 0, "Checks for java.exe and javaw.exe", true ],
+			[ 0, "Terminate JDK" ],
+			//[ 0, "Terminate JDK (from Process ID)" ],
+			//[ 1, "Terminate JDK (from Command Prompt)" ],
+			"---"
+		],
+		"ConditionMenu": [
+			[ 0, "On JDK terminated" ],
+			//[ 0, "Is JDK active?" ],
+			//[ 1, "On JDK terminated" ],
+			"---"
+		],
+		"ExpressionMenu": [
+			[ 0, "Get 'Kill JDK on obj creation' flag" ],
+			"---"
+		],
+		"Actions": [
+			{
+				"Title": "Terminate JDK"
+			}
+			/*
+			{
+				"Title": "Terminate JDK (Process ID)"
+			},
+			{
+				"Title": "Terminate JDK (Command Prompt)"
+			}
+			*/
+		],
+		"Conditions": [
+			/*
+			{
+				"Title": "%o : Is JDK active?",
+				"Triggered": false
+			},*/
+			{
+				"Title": "%o : On JDK terminated",
+				"Triggered": true
+			}
+		],
+		"Expressions": [
+			{
+				"Title": "AutoKillJdkFlag(",
+				"Returns": "Integer"
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Terminate JDK on object creation",
+				"Info": "Should be bold text.",
+				"Type": "Checkbox",
+				"DefaultState": true, // idk if it'd be better to have the default set to true or false
+				"Bold": true
+			},
+			{
+                "Title": "Additional Extension Info", // Shoutout to Kapi1525 for this part.
+                "Info": "Please be mindful of everything in here.",
+                "Type": "Group"
+            },
+			{
+				"Title": "Version",
+				"Info": "Current version of the extension. Contact the creator if it's incorrect.",
+				"Type": "Text",
+				"DefaultState": "v1.0.0.0",
+				"Bold": true
+			},
+			{
+				"Title": "Availabilty",
+				"Info": "Private = Do not distribute without permission! Otherwise, you're fine to do so. (Same rules apply to the source code!)",
+				"Type": "Text",
+				"DefaultState": "Public",
+				"Bold": true
+			}
+		]
+	}
+}
