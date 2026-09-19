@@ -14,60 +14,7 @@
 
 #import <CoreHaptics/CoreHaptics.h> // For advanced haptics support check
 
-// Haptic IDs
-#define LEGACY_VIBRATE    0
-#define HAPTIC_LIGHT      1
-#define HAPTIC_MEDIUM     2
-#define HAPTIC_HEAVY      3
-#define HAPTIC_SOFT       4
-#define HAPTIC_RIGID      5
-#define HAPTIC_SELECTION  6
-#define HAPTIC_SUCCESS    7
-#define HAPTIC_WARNING    8
-#define HAPTIC_ERROR      9
-
-// Error codes
-#define ERR_IOS10_REQUIRED      0
-#define ERR_IOS13_REQUIRED      1
-#define ERR_OUT_OF_INDEX_RANGE  2
-
-// Condition IDs (Fusion)
-#define CND_ONLEGACYVIBRATE         0
-#define CND_ONLIGHTHAPTIC           1
-#define CND_ONMEDIUMHAPTIC          2
-#define CND_ONHEAVYHAPTIC           3
-#define CND_ONSOFTHAPTIC            4
-#define CND_ONRIGIDHAPTIC           5
-#define CND_ONSELECTIONHAPTIC       6
-#define CND_ONNOTIFSUCCESSHAPTIC    7
-#define CND_ONNOTIFWARNINGHAPTIC    8
-#define CND_ONNOTIFERRORHAPTIC      9
-#define CND_ONANYHAPTIC             10
-#define CND_ONERROR                 11
-#define CND_AREADVHAPTICSUPPORTED   12
-#define CND_ISEMULATINGHAPTICS      13
-#define CND_LAST                    14
-
-// Action IDs (Fusion)
-#define ACT_LEGACYVIBRATE           0
-#define ACT_LIGHTHAPTIC             1
-#define ACT_MEDIUMHAPTIC            2
-#define ACT_HEAVYHAPTIC             3
-#define ACT_SOFTHAPTIC              4
-#define ACT_RIGIDHAPTIC             5
-#define ACT_SELECTIONHAPTIC         6
-#define ACT_NOTIFSUCCESSHAPTIC      7
-#define ACT_NOTIFWARNINGHAPTIC      8
-#define ACT_NOTIFERRORHAPTIC        9
-#define ACT_PLAYHAPTICBYEXP         10
-#define ACT_TOGGLEOUTOFRANGEERROR   11
-#define ACT_TOGGLEEMULATIONFLAG     12
-
-// Expression IDs (Fusion)
-#define EXP_LASTHAPTICNAME          0
-#define EXP_LASTHAPTICINDEX         1
-#define EXP_LASTERRORCODE           2
-#define EXP_LASTERRORMESSAGE        3
+// View header file for codes
 
 @implementation CRuniOSHaptics
 
@@ -103,7 +50,7 @@
         notificationGen = [[UINotificationFeedbackGenerator alloc] init];
     }
 
-    return YES;
+    return YES; // Idk if it matters whether or not it returns YES or NO
 }
 
 -(int)handleRunObject
@@ -162,79 +109,108 @@
 -(void)actLegacyVibrate
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
     // Trigger "on legacy vibrate" condition
+    [ho generateEvent:CND_ONLEGACYVIBRATE withParam:0];
 }
 
 -(void)actLightHaptic
 {
     [lightGen prepare];
     [lightGen impactOccurred];
+
     // Trigger "on light haptic" condition
+    [ho generateEvent:CND_ONLIGHTHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actMediumHaptic
 {
     [mediumGen prepare];
     [mediumGen impactOccurred];
+
     // Trigger "on medium haptic" condition
+    [ho generateEvent:CND_ONMEDIUMHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actHeavyHaptic
 {
     [heavyGen prepare];
     [heavyGen impactOccurred];
+
     // Trigger "on heavy haptic" condition
+    [ho generateEvent:CND_ONHEAVYHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actSoftHaptic
 {
     [softGen prepare];
     [softGen impactOccurred];
+
     // Trigger "on soft haptic" condition
+    [ho generateEvent:CND_ONSOFTHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actRigidHaptic
 {
     [rigidGen prepare];
     [rigidGen impactOccurred];
+
     // Trigger "on rigid haptic" condition
+    [ho generateEvent:CND_ONRIGIDHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actSelectionHaptic
 {
     [selectionGen prepare];
     [selectionGen selectionChanged];
+
     // Trigger "on selection haptic" condition
+    [ho generateEvent:CND_ONSELECTIONHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actSuccessHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeSuccess];
+
     // Trigger "on success haptic" condition
+    [ho generateEvent:CND_ONNOTIFSUCCESSHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actWarningHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeWarning];
+
     // Trigger "on warning haptic" condition
+    [ho generateEvent:CND_ONNOTIFWARNINGHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)actErrorHaptic
 {
     [notificationGen prepare];
     [notificationGen notificationOccurred:UINotificationFeedbackTypeError];
+
     // Trigger "on error haptic" condition
+    [ho generateEvent:CND_ONNOTIFERRORHAPTIC withParam:0];
     // Trigger "on any haptic" condition
+    [ho generateEvent:CND_ONANYHAPTIC withParam:0];
 }
 
 -(void)reportError:(int)errorCode
@@ -243,24 +219,31 @@
 
     lastErrorCode = errorCode;
 
+    // 0 = iOS 10 needed, 1 = iOS 13 needed, 2 = Out of range
     switch (errorCode)
     {
         case ERR_IOS10_REQUIRED:
         {
             lastErrorMessage = @"The requested haptic requires iOS 10 or later.";
+
             // Trigger "on error" condition
+            [ho generateEvent:CND_ONERROR withParam:0];
             break;
         }
         case ERR_IOS13_REQUIRED:
         {
             lastErrorMessage = @"The requested haptic requires iOS 13 or later.";
+
             // Trigger "on error" condition
+            [ho generateEvent:CND_ONERROR withParam:1];
             break;
         }
         case ERR_OUT_OF_INDEX_RANGE:
         {
             lastErrorMessage = @"The requested haptic ID was outside valid range (0-9)";
+
             // Trigger "on error" condition
+            [ho generateEvent:CND_ONERROR withParam:2];
             break;
         }
     }
@@ -371,8 +354,10 @@
             break;
         }
         case ACT_TOGGLEOUTOFRANGEERROR:
-            clampExp = /*Get parameter 0 for this action and turn it from int to bool*/NO;
+        {
+            clampExp = ([act getParamExpDouble:rh withNum:0] >= 1);// Turns into bool. YES if condition is met, NO otherwise.
             break;
+        }
         case ACT_TOGGLEEMULATIONFLAG:
             break;
     }

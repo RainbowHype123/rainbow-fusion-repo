@@ -111,6 +111,25 @@ BEGIN
     POPUP ""
     BEGIN
 		MENUITEM SEPARATOR
+        MENUITEM "On 1-second Vibration (LEGACY)",                    IDMN_CND_ONLEGACYVIBRATE
+        MENUITEM SEPARATOR
+        MENUITEM "On Light Haptic",           IDMN_CND_ONLIGHTHAPTIC
+        MENUITEM "On Medium Haptic",             IDMN_CND_ONMEDIUMHAPTIC
+        MENUITEM "On Heavy Haptic",             IDMN_CND_ONHEAVYHAPTIC
+        MENUITEM "On Soft Haptic",           IDMN_CND_ONSOFTHAPTIC
+        MENUITEM "On Rigid Haptic",             IDMN_CND_ONRIGIDHAPTIC
+        MENUITEM "On Selection Haptic",             IDMN_CND_ONSELECTIONHAPTIC
+        MENUITEM SEPARATOR
+        MENUITEM "On Notif Success Haptic",             IDMN_CND_ONNOTIFSUCCESSHAPTIC
+        MENUITEM "On Notif Warning Haptic",             IDMN_CND_ONNOTIFWARNINGHAPTIC
+        MENUITEM "On Notif Error Haptic",             IDMN_CND_ONNOTIFERRORHAPTIC
+        MENUITEM SEPARATOR
+        MENUITEM "On Any Haptic",             IDMN_CND_ONANYHAPTIC
+        MENUITEM SEPARATOR
+        MENUITEM "On error",             IDMN_CND_ONERROR
+        MENUITEM "Is Advanced Haptics supported? (iOS +13.0)",             IDMN_CND_AREADVHAPTICSUPPORTED
+        MENUITEM "Is Emulating Haptics?",             IDMN_CND_ISEMULATINGHAPTICS
+        MENUITEM SEPARATOR
     END
 END
 #endif
@@ -125,11 +144,23 @@ BEGIN
     POPUP ""
     BEGIN
         MENUITEM SEPARATOR
-        MENUITEM "Perform 1-second Vibration (LEGACY)",                    IDMN_ACT_VIBRATELEGACY
+        MENUITEM "Perform 1-second Vibration (LEGACY)",                    IDMN_ACT_LEGACYVIBRATE
         MENUITEM SEPARATOR
         MENUITEM "Perform Light Haptic",           IDMN_ACT_LIGHTHAPTIC
         MENUITEM "Perform Medium Haptic",             IDMN_ACT_MEDIUMHAPTIC
         MENUITEM "Perform Heavy Haptic",             IDMN_ACT_HEAVYHAPTIC
+        MENUITEM "Perform Soft Haptic",           IDMN_ACT_SOFTHAPTIC
+        MENUITEM "Perform Rigid Haptic",             IDMN_ACT_RIGIDHAPTIC
+        MENUITEM "Perform Selection Haptic",             IDMN_ACT_SELECTIONHAPTIC
+        MENUITEM SEPARATOR
+        MENUITEM "Perform Notif Success Haptic",             IDMN_ACT_NOTIFSUCCESSHAPTIC
+        MENUITEM "Perform Notif Warning Haptic",             IDMN_ACT_NOTIFWARNINGHAPTIC
+        MENUITEM "Perform Notif Error Haptic",             IDMN_ACT_NOTIFERRORHAPTIC
+        MENUITEM SEPARATOR
+        MENUITEM "Play Haptic by Expression",             IDMN_ACT_PLAYHAPTICBYEXP
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle Out-Of-Range Error",             IDMN_ACT_TOGGLEOUTOFRANGEERROR
+        MENUITEM "Toggle Emulation Flag",             IDMN_ACT_TOGGLEEMULATIONFLAG
         MENUITEM SEPARATOR
     END
 END
@@ -144,6 +175,12 @@ MN_EXPRESSIONS MENU DISCARDABLE
 BEGIN
     POPUP ""
     BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Get last Haptic by name",           IDMN_EXPRESSION_LASTHAPTICNAME
+        MENUITEM "Get last Haptic by index",             IDMN_EXPRESSION_LASTHAPTICINDEX
+        MENUITEM SEPARATOR
+        MENUITEM "Get last error code",             IDMN_EXPRESSION_LASTERRORCODE
+        MENUITEM "Get last error as string",           IDMN_EXPRESSION_LASTERRORMESSAGE
         MENUITEM SEPARATOR
     END
 END
@@ -195,17 +232,70 @@ BEGIN
     IDST_OBJNAME            "iOS Haptic Feedback"
     IDST_AUTHOR             "RainbowHype"
     IDST_COPYRIGHT          "\u00A9 2026 RainbowHype"
-    IDST_COMMENT            "Simple haptic feedback implementation for the iOS runtime."
+    IDST_COMMENT            "Simple haptic feedback implementation for the iOS runtime. (v2.0.0.0-Beta)"
     IDST_HTTP               "https://github.com/RainbowHype123/rainbow-fusion-repo"
+END
+
+STRINGTABLE DISCARDABLE
+
+BEGIN
+    M_CND_ONLEGACYVIBRATE             "%o : On 1-second Vibration"
+    M_CND_ONLIGHTHAPTIC               "%o : On Light Haptic"
+    M_CND_ONMEDIUMHAPTIC              "%o : On Medium Haptic"
+    M_CND_ONHEAVYHAPTIC               "%o : On Heavy Haptic"
+    M_CND_ONSOFTHAPTIC                "%o : On Soft Haptic"
+    M_CND_ONRIGIDHAPTIC               "%o : On Rigid Haptic"
+    M_CND_ONSELECTIONHAPTIC           "%o : On Selection Haptic"
+    M_CND_ONNOTIFSUCCESSHAPTIC        "%o : On Notif Success Haptic"
+    M_CND_ONNOTIFWARNINGHAPTIC        "%o : On Notif Warning Haptic"
+    M_CND_ONNOTIFERRORHAPTIC          "%o : On Notif Error Haptic"
+    M_CND_ONANYHAPTIC                 "%o : On Any Haptic"
+    M_CND_ONERROR                     "%o : On error"
+    M_CND_AREADVHAPTICSUPPORTED       "%o : Is Advanced Haptics supported?"
+    M_CND_ISEMULATINGHAPTICS          "%o : Is Emulating Haptics?"
+END
+
+STRINGTABLE DISCARDABLE
+
+BEGIN
+    M_ACT_LEGACYVIBRATE               "Perform 1-second Vibration"
+    M_ACT_LIGHTHAPTIC                 "Perform Light Haptic"
+    M_ACT_MEDIUMHAPTIC                "Perform Medium Haptic"
+    M_ACT_HEAVYHAPTIC                 "Perform Heavy Haptic"
+    M_ACT_SOFTHAPTIC                  "Perform Soft Haptic"
+    M_ACT_RIGIDHAPTIC                 "Perform Rigid Haptic"
+    M_ACT_SELECTIONHAPTIC             "Perform Selection Haptic"
+    M_ACT_NOTIFSUCCESSHAPTIC          "Perform Notif Success Haptic"
+    M_ACT_NOTIFWARNINGHAPTIC          "Perform Notif Warning Haptic"
+    M_ACT_NOTIFERRORHAPTIC            "Perform Notif Error Haptic"
+    M_ACT_PLAYHAPTICBYEXP             "Play Haptic %0"
+    M_ACT_TOGGLEOUTOFRANGEERROR       "Toggle Out-Of-Range Error to %0"
+    M_ACT_TOGGLEEMULATIONFLAG         "Toggle Emulation Flag to %0"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    M_ACT_VIBRATELEGACY           "Perform 1-second Vibration"
-    M_ACT_LIGHTHAPTIC            "Perform Light Haptic"
-    M_ACT_MEDIUMHAPTIC          "Perform Medium Haptic"
-    M_ACT_HEAVYHAPTIC          "Perform Heavy Haptic"
+    M_EXPRESSION_LASTHAPTICNAME           "LastHaptic$("
+    M_EXPRESSION_LASTHAPTICINDEX            "LastHapticCode("
+    M_EXPRESSION_LASTERRORCODE          "LastErrorCode("
+    M_EXPRESSION_LASTERRORMESSAGE          "LastError$("
 END
+
+//Properties
+STRINGTABLE
+BEGIN
+    IDS_PROP_ALLOWOUTOFBOUNDSERROR_CHECK "Allow Out-Of-bounds Error"
+    IDS_PROP_ALLOWOUTOFBOUNDSERROR_CHECK_INFO "If enabled, the extension won't clamp the value in the ""Play Haptic by Expression"" action to a valid range. Works outside of emulation."
+
+    IDS_PROP_HAPTICEMULATION_TEXTTITLE "Haptic Emulation"
+
+    // Menu
+    IDS_PROP_EMULATIONMODE_MENU_BASE "Emulation Mode"
+    IDS_PROP_EMULATIONMODE_MENU_INFO "Choose whether or not to emulate haptics, and what version of iOS should be emulated (for the advanced haptics option). This has no effect outside the Windows runtime."
+
+    //IDS_PROP_OTHEROPTIONS_TEXTTITLE "Other"
+END
+
 /*
 STRINGTABLE DISCARDABLE 
 BEGIN
@@ -227,4 +317,3 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

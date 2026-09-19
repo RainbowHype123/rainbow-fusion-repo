@@ -26,6 +26,18 @@ enum {
 //	PROPID_CHECK,
 //	PROPID_COMBO,
 //	PROPID_COLOR,
+	PROPID_SETTINGS = PROPID_EXTITEM_CUSTOM_FIRST,
+	PROPID_ALLOWOUTOFBOUNDSERROR_CHECK,
+	PROPID_HAPTICEMULATION_TEXTTITLE,
+	PROPID_EMULATIONMODE_MENU
+};
+
+LPCTSTR HapticsEmulationList[] = {
+0,    // reserved
+_T("None"),
+_T("iOS 10.0"),
+_T("iOS 13.0"),
+NULL
 };
 
 // Example of content of the PROPID_COMBO combo box
@@ -50,6 +62,10 @@ PropData Properties[] = {
 //	PropData_CheckBox	(PROPID_CHECK,		IDS_PROP_CHECK,			IDS_PROP_CHECK_INFO),
 //	PropData_ComboBox	(PROPID_COMBO,		IDS_PROP_COMBO,			IDS_PROP_COMBO,	ComboList),
 //	PropData_Color		(PROPID_COLOR,		IDS_PROP_COLOR,			IDS_PROP_COLOR_INFO),
+	PropData_CheckBox (PROPID_ALLOWOUTOFBOUNDSERROR_CHECK, IDS_PROP_ALLOWOUTOFBOUNDSERROR_CHECK, IDS_PROP_ALLOWOUTOFBOUNDSERROR_CHECK_INFO),
+
+	PropData_Group (PROPID_HAPTICEMULATION_TEXTTITLE, IDS_PROP_HAPTICEMULATION_TEXTTITLE, IDS_PROP_HAPTICEMULATION_TEXTTITLE),
+	PropData_ComboBox (PROPID_EMULATIONMODE_MENU, IDS_PROP_EMULATIONMODE_MENU_BASE, IDS_PROP_EMULATIONMODE_MENU_INFO, HapticsEmulationList),
 
 	// End of table (required)
 	PropData_End()
@@ -675,6 +691,10 @@ LPVOID WINAPI DLLExport GetPropValue(LPMV mV, LPEDATA edPtr, UINT nPropID)
 //	case PROPID_COMBO:
 //		return new CPropDWordValue(edPtr->nComboIndex);
 //	}
+	switch (nPropID) {
+	case PROPID_EMULATIONMODE_MENU:
+		return new CPropDWordValue(edPtr->emulationMode);
+    }
 #endif // !defined(RUN_ONLY)
 	return NULL;
 }
@@ -695,6 +715,11 @@ BOOL WINAPI DLLExport GetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID)
 //	case PROPID_CHECK:
 //		return edPtr->nCheck;
 //	}
+
+	switch (nPropID) {
+	case PROPID_ALLOWOUTOFBOUNDSERROR_CHECK:
+		return edPtr->oobCheck;
+    }
 
 #endif // !defined(RUN_ONLY)
 	return 0;		// Unchecked
@@ -760,6 +785,14 @@ void WINAPI DLLExport SetPropValue(LPMV mV, LPEDATA edPtr, UINT nPropID, LPVOID 
 	// in this case, just call this function
 	// mvInvalidateObject(mV, edPtr);
 
+	switch (nPropID)
+	{
+	case PROPID_EMULATIONMODE_MENU:
+		// Simply grab the value
+		edPtr->emulationMode = ((CPropDWordValue*)pValue)->m_dwValue;
+		break;
+	}
+
 #endif // !defined(RUN_ONLY)
 }
 
@@ -781,6 +814,15 @@ void WINAPI DLLExport SetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID, BOOL nC
 //		mvRefreshProp(mV, edPtr, PROPID_COMBO, TRUE);
 //		break;
 //	}
+
+	switch (nPropID)
+	{
+	case PROPID_ALLOWOUTOFBOUNDSERROR_CHECK:
+		edPtr->oobCheck = nCheck;
+		mvRefreshProp(mV, edPtr, IDS_PROP_EMULATIONMODE_MENU_BASE, FALSE);
+		break;
+	}
+
 #endif // !defined(RUN_ONLY)
 }
 
