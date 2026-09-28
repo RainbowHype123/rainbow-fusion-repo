@@ -290,6 +290,18 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunstrgenobj();
 	        }
+			if (string.Compare(name, "MovementTimerBase")==0)
+	        {
+		        pObject=new CRunMovementTimerBase();
+	        }
+			if (string.Compare(name, "AnimInfo")==0)
+	        {
+		        pObject=new CRunAnimInfo();
+	        }
+			if (string.Compare(name, "DeltaX")==0)
+	        {
+		        pObject=new CRunDeltaX();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
