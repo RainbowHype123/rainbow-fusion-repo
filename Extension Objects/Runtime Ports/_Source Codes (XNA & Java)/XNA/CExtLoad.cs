@@ -302,6 +302,26 @@ namespace RuntimeXNA.Extensions
 	        {
 		        pObject=new CRunDeltaX();
 	        }
+			if (string.Compare(name, "MvtTimerCtrl")==0)
+	        {
+		        pObject=new CRunMvtTimerCtrl();
+	        }
+			if (string.Compare(name, "FunctionEggtimer")==0)
+	        {
+		        pObject=new CRunFunctionEggtimer();
+	        }
+			if (string.Compare(name, "pathfind")==0)
+	        {
+		        pObject=new CRunpathfind();
+	        }
+			if (string.Compare(name, "WizardTimon")==0)
+	        {
+		        pObject=new CRunWizardTimon();
+	        }
+			if (string.Compare(name, "Perspective")==0)
+	        {
+		        pObject=new CRunPerspective();
+	        }
 			// ------------------
 #if WINDOWS_PHONE
             if (string.Compare(name, "MultipleTouch")==0)
