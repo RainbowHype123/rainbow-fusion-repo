@@ -23,11 +23,14 @@ namespace RuntimeXNA.Extensions
     {
         const int ACT_CONVERTSECONDS = 0;
 
-        const int EXP_GETSECONDS = 0;
+        const int EXP_GETHOURS = 0;
         const int EXP_GETMINUTES = 1;
-        const int EXP_GETHOURS = 2;
+        const int EXP_GETSECONDS = 2;
 
-        int SecondsToConvert = 0;
+        int ConvertedSeconds = 0;
+        int ConvertedMinutes = 0;
+        int ConvertedHours = 0;
+        int totalStoredSeconds = 0;
 
         public override int getNumberOfConditions()
         {
@@ -50,15 +53,24 @@ namespace RuntimeXNA.Extensions
             {
                 case ACT_CONVERTSECONDS:
                 {
-                    int inputInt = act.getParamExpression(rh, 0);
+                    int readThisInput = act.getParamExpression(rh, 0);
 
-                    if (SecondsToConvert > 0.0)
+                    if (readThisInput <= 0)
                     {
-                        SecondsToConvert = inputInt;
+                        totalStoredSeconds = 0;
+                        ConvertedSeconds = 0;
+                        ConvertedMinutes = 0;
+                        ConvertedHours = 0;
                         break;
                     }
 
-                    SecondsToConvert = 0; // Else
+                    if (readThisInput != totalStoredSeconds)
+                    {
+                        totalStoredSeconds = readThisInput;
+                        ConvertedSeconds = totalStoredSeconds % 60;
+                        ConvertedMinutes = (totalStoredSeconds / 60) % 60;
+                        ConvertedHours = totalStoredSeconds / 3600;
+                    }
                 }
             }
         }
@@ -69,15 +81,15 @@ namespace RuntimeXNA.Extensions
             {
                 case EXP_GETSECONDS:
                 {
-					return new CValue(SecondsToConvert);
+					return new CValue(ConvertedSeconds);
                 }
                 case EXP_GETMINUTES:
                 {
-					return new CValue(SecondsToConvert / 60);
+					return new CValue(ConvertedMinutes);
                 }
                 case EXP_GETHOURS:
                 {
-					return new CValue((SecondsToConvert / 60) / 60);
+					return new CValue(ConvertedHours);
                 }
             }
             return new CValue(0);
